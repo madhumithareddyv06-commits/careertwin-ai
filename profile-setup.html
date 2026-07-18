@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Your Career Twin</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="blob"></div>
+
+<div class="profile-container">
+
+<div class="profile-card">
+
+<h1>Create Your Career Twin</h1>
+
+<p>
+Tell us about yourself to generate personalized career guidance.
+</p>
+
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+>
+
+<input
+type="text"
+placeholder="College Name"
+>
+
+<input
+type="text"
+placeholder="Branch"
+>
+
+<input
+type="number"
+placeholder="CGPA"
+step="0.1"
+>
+
+<select id="role">
+
+<option value="">
+Select Dream Role
+</option>
+
+<option>
+AI Engineer
+</option>
+
+<option>
+Data Scientist
+</option>
+
+<option>
+Machine Learning Engineer
+</option>
+
+<option>
+Software Engineer
+</option>
+
+<option>
+Cybersecurity Analyst
+</option>
+
+<option>
+Product Manager
+</option>
+
+</select>
+
+<h3>Current Skills</h3>
+
+<div class="skills-checkbox">
+
+<label>
+<input type="checkbox">
+Python
+</label>
+
+<label>
+<input type="checkbox">
+SQL
+</label>
+
+<label>
+<input type="checkbox">
+Machine Learning
+</label>
+
+<label>
+<input type="checkbox">
+Java
+</label>
+
+<label>
+<input type="checkbox">
+Web Development
+</label>
+
+<label>
+<input type="checkbox">
+Data Structures
+</label>
+
+</div>
+
+<h3>Upload Resume</h3>
+
+<input
+type="file"
+id="resumeUpload"
+onchange="showUploadMessage()"
+>
+
+<p id="uploadStatus"></p>
+
+<button onclick="createProfile()">
+Create My Career Twin
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function createProfile(){
+
+let userName =
+document.getElementById("name").value;
+
+let dreamRole =
+document.getElementById("role").value;
+
+localStorage.setItem(
+"userName",
+userName
+);
+
+localStorage.setItem(
+"dreamRole",
+dreamRole
+);
+
+window.location.href =
+"home.html";
+
+}
+
+function showUploadMessage(){
+
+document.getElementById(
+"uploadStatus"
+).innerHTML =
+"✅ Resume Uploaded Successfully";
+
+}
+
+</script>
+
+</body>
+
+</html>
